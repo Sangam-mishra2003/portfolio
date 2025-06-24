@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sangam Kumar Mishra - Portfolio of a Computer Science Engineer, Developer, and Mentor">
+  <meta name="keywords" content="Sangam Kumar Mishra, Portfolio, Developer, Resume, Projects, Coding, Engineer">
+  <meta name="author" content="Sangam Kumar Mishra">
+  <title>Sangam Kumar Mishra | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(ellipse at center, #0f172a, #000);
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    .glow-box {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glow-box:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
+    }
+  </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('bg-white');
+      document.body.classList.toggle('text-gray-900');
+      document.body.classList.toggle('text-white');
+    }
+  </script>
+</head>
+<body class="transition-colors duration-500">
+  <header class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-md py-4 shadow-lg">
+    <div class="flex flex-col items-center space-y-2">
+      <img src="PHOTO-2025-03-17-23-50-12 copy.jpg" class="w-24 h-24 rounded-full border-4 border-blue-500 object-cover" />
+      <h1 class="text-3xl font-extrabold">Sangam Kumar Mishra</h1>
+      <p class="text-sm text-gray-400">B Tech in Computer Science | Competitive Programmer | Developer</p>
+      <div class="flex flex-wrap justify-center gap-4 text-blue-400 text-sm mt-2">
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#internships">Internships</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#extracurricular">Extracurricular</a>
+        <a href="./Sangam_Kumar_Mishra_Resume.pdf" target="_blank" class="text-green-400 underline font-semibold">Download Resume</a>
+      </div>
+      <button onclick="toggleTheme()" class="text-xs px-3 py-1 border border-gray-500 text-white rounded hover:bg-gray-700">Toggle Theme</button>
+      <p class="text-xs text-gray-500">+91-9264244659</p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12 space-y-14">
+    <section id="education" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Education</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Bakhtiyarpur College of Engineering</h3>
+          <p>B Tech in CSE – 8.01 CGPA (2021–2024)</p>
+        </div>
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Darbhanga College of Polytechnic</h3>
+          <p>Diploma – 8.5 CGPA (2018–2021)</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Projects</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Library Management System</h3>
+          <p>Built UI using HTML/CSS/JS and MongoDB with REST APIs.</p>
+        </div>
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Health Management System</h3>
+          <p>Track health, diet, and fitness via dashboard.</p>
+        </div>
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Plant Disease Prediction</h3>
+          <p>ML project using TensorFlow, Flask, Python for plant disease classification.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="internships" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Internships</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">Salesforce Developer Intern</h3>
+          <p>Integrated customer-service workflows (Dec 2023 – Jan 2024).</p>
+        </div>
+        <div class="p-4 glow-box rounded-xl">
+          <h3 class="font-bold">North Bihar Power Distribution</h3>
+          <p>Worked on DBMS backend projects in a 10-member team (Jan–Mar 2023).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Skills</h2>
+      <ul class="grid grid-cols-2 gap-2 text-sm text-gray-300">
+        <li><strong>Languages:</strong> C, C++, Java, Python, JS, SQL, Kotlin</li>
+        <li><strong>Frameworks:</strong> ReactJS, NodeJS, Flask, ExpressJS, Flutter</li>
+        <li><strong>Tools:</strong> VS Code, Git, Android Studio, MongoDB</li>
+        <li><strong>Platforms:</strong> Linux, MacOS, GitHub</li>
+      </ul>
+    </section>
+
+    <section id="certifications" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
+      <ul class="list-disc ml-6 text-sm">
+        <li>ReactJS & Redux – Udemy</li>
+        <li>Python for Data Science – XIE</li>
+        <li>Command Line in Linux – Coursera</li>
+        <li>MongoDB Basics, NodeJS with Express – Udemy</li>
+        <li>Microsoft AI Classroom, 5★ in C++ & SQL</li>
+      </ul>
+    </section>
+
+    <section id="extracurricular" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold mb-4">Extracurricular</h2>
+      <p>Mentor at Code Champ – helped peers excel in DSA and contests (2023–2024).</p>
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700">
+    &copy; 2025 Sangam Kumar Mishra. All rights reserved.
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+</body>
+</html>
