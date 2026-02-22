@@ -1,144 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sangam Kumar Mishra - Portfolio of a Computer Science Engineer, Developer, and Mentor">
-  <meta name="keywords" content="Sangam Kumar Mishra, Portfolio, Developer, Resume, Projects, Coding, Engineer">
-  <meta name="author" content="Sangam Kumar Mishra">
-  <title>Sangam Kumar Mishra | Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(ellipse at center, #0f172a, #000);
-      color: white;
-      transition: background-color 0.3s ease;
-    }
-    .glow-box {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(8px);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glow-box:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 30px rgba(0, 123, 255, 0.3);
-    }
-  </style>
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('bg-white');
-      document.body.classList.toggle('text-gray-900');
-      document.body.classList.toggle('text-white');
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangam Kumar Mishra | Senior Tech Lead</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#00f2ff',
+                        secondary: '#7b2cbf',
+                        dark: '#0a0a0a',
+                        glass: 'rgba(255, 255, 255, 0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00f2ff, #7b2cbf);
+            border-radius: 4px;
+        }
+
+        /* Animated Background Mesh */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
+
+        /* Glassmorphism Card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 242, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.1);
+        }
+
+        /* Glowing Text */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+        }
+
+        /* Floating Shapes */
+        .shape {
+            position: absolute;
+            filter: blur(80px);
+            z-index: -1;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+    </style>
 </head>
-<body class="transition-colors duration-500">
-  <header class="sticky top-0 z-50 bg-black bg-opacity-90 backdrop-blur-md py-4 shadow-lg">
-    <div class="flex flex-col items-center space-y-2">
-      <img src="PHOTO-2025-03-17-23-50-12 copy.jpg" class="w-24 h-24 rounded-full border-4 border-blue-500 object-cover" />
-      <h1 class="text-3xl font-extrabold">Sangam Kumar Mishra</h1>
-      <p class="text-sm text-gray-400">B Tech in Computer Science | Competitive Programmer | Developer</p>
-      <div class="flex flex-wrap justify-center gap-4 text-blue-400 text-sm mt-2">
-        <a href="#education">Education</a>
-        <a href="#projects">Projects</a>
-        <a href="#internships">Internships</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#extracurricular">Extracurricular</a>
-        <a href="./Sangam_Mishra_Resume_with_Experience.pdf" target="_blank" class="text-green-400 underline font-semibold">Download Resume</a>
-      </div>
-      <button onclick="toggleTheme()" class="text-xs px-3 py-1 border border-gray-500 text-white rounded hover:bg-gray-700">Toggle Theme</button>
-      <p class="text-xs text-gray-500">+91-9264244659</p>
-    </div>
-  </header>
+<body class="bg-dark text-white overflow-x-hidden relative">
 
-  <main class="max-w-5xl mx-auto px-6 py-12 space-y-14">
-    <section id="education" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Education</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Bakhtiyarpur College of Engineering</h3>
-          <p>B Tech in CSE – 8.01 CGPA (2021–2024)</p>
+    <!-- Background Elements -->
+    <div class="shape w-96 h-96 bg-primary rounded-full opacity-20 top-0 left-0"></div>
+    <div class="shape w-80 h-80 bg-secondary rounded-full opacity-20 bottom-0 right-0 animation-delay-2000"></div>
+    <div class="fixed inset-0 bg-grid pointer-events-none"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 glass-card border-b-0 rounded-none px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold tracking-tighter">
+                SANGAM<span class="text-primary">.DEV</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#about" class="hover:text-primary transition-colors">ABOUT</a>
+                <a href="./Sangam_Mishra_Resume_with_Experience.pdf" class="hover:text-primary transition-colors">DOWNLOAD RESUME</a>
+                <a href="#experience" class="hover:text-primary transition-colors">EXPERIENCE</a>
+                <a href="#projects" class="hover:text-primary transition-colors">PROJECTS</a>
+                <a href="#skills" class="hover:text-primary transition-colors">SKILLS</a>
+                <a href="#contact" class="px-5 py-2 border border-primary text-primary rounded-full hover:bg-primary hover:text-black transition-all">Hire Me</a>
+            </div>
         </div>
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Darbhanga College of Polytechnic</h3>
-          <p>Diploma – 8.5 CGPA (2018–2021)</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-block px-4 py-1 mb-4 border border-primary/30 rounded-full bg-primary/10 text-primary text-sm font-semibold">
+                    <i class="fas fa-check-circle mr-2"></i> Available for Freelance
+                </div>
+                <h1 class="text-5xl md:text-7xl font-display font-bold leading-tight mb-6">
+                    Building the <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-glow">Future of Tech</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg leading-relaxed">
+                    I'm <span class="text-white font-bold">Sangam Kumar Mishra</span>, a Senior Tech Lead at Raghudhan. I specialize in Full Stack Development, Cyber Security, and architecting scalable AI solutions for international clients.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-primary text-black font-bold rounded-full hover:shadow-[0_0_20px_rgba(0,242,255,0.4)] transition-all">
+                        View Work
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:border-primary hover:text-primary transition-all">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:border-primary hover:text-primary transition-all">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Image / 3D Element -->
+            <div class="relative flex justify-center" data-aos="fade-left" data-aos-duration="1000">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <!-- Decorative Rings -->
+                    <div class="absolute inset-0 border-2 border-dashed border-white/10 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                    <div class="absolute inset-4 border border-white/10 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                    
+                    <!-- Profile Image -->
+                    <img src="profpic.jpg" alt="Sangam Kumar Mishra" 
+                         class="w-full h-full object-cover rounded-full border-4 border-dark shadow-2xl relative z-10">
+                    
+                    <!-- Floating Badges -->
+                    <div class="absolute -bottom-4 -left-4 glass-card p-3 rounded-xl flex items-center gap-3 animate-bounce">
+                        <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <p class="text-xs text-gray-400">Cyber Security</p>
+                            <p class="font-bold text-sm">M.Tech Scholar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="projects" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Library Management System</h3>
-          <p>Built UI using HTML/CSS/JS and MongoDB with REST APIs.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-display font-bold mb-12 text-center" data-aos="fade-up">Professional <span class="text-primary">Journey</span></h2>
+            
+            <div class="relative border-l-2 border-white/10 ml-4 md:ml-0 space-y-12">
+                
+                <!-- Current Role -->
+                <div class="md:flex gap-8 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="md:w-1/3 flex flex-col items-end md:items-end text-right pr-8 relative">
+                        <h3 class="text-xl font-bold text-white">Senior Tech Lead</h3>
+                        <p class="text-primary font-semibold">Raghudhan</p>
+                        <span class="text-sm text-gray-400 mt-1">2024 - Present</span>
+                        <div class="absolute -right-[9px] top-2 w-4 h-4 bg-dark border-2 border-primary rounded-full"></div>
+                    </div>
+                    <div class="md:w-2/3 glass-card p-6 rounded-xl ml-8 md:ml-0">
+                        <ul class="list-disc list-outside text-gray-300 space-y-2 text-sm">
+                            <li>Leading a team of developers to architect and deploy scalable web solutions.</li>
+                            <li>Spearheading the development and management of multiple school websites from end-to-end (Frontend, Backend, Database).</li>
+                            <li>Implementing robust security protocols and optimizing database performance for high-traffic applications.</li>
+                            <li>Collaborating with stakeholders to define technical roadmaps and product vision.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="md:flex gap-8 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="md:w-1/3 flex flex-col items-end md:items-end text-right pr-8 relative">
+                        <h3 class="text-xl font-bold text-white">M.Tech (Cyber Security)</h3>
+                        <p class="text-primary font-semibold">Master's Degree</p>
+                        <span class="text-sm text-gray-400 mt-1">2025 - 2027</span>
+                        <div class="absolute -right-[9px] top-2 w-4 h-4 bg-dark border-2 border-secondary rounded-full"></div>
+                    </div>
+                    <div class="md:w-2/3 glass-card p-6 rounded-xl ml-8 md:ml-0">
+                        <p class="text-gray-300">Specializing in advanced network security, ethical hacking, and AI-driven threat detection systems.</p>
+                    </div>
+                </div>
+
+                <!-- Previous Education -->
+                <div class="md:flex gap-8 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="md:w-1/3 flex flex-col items-end md:items-end text-right pr-8 relative">
+                        <h3 class="text-xl font-bold text-white">B.Tech (CSE)</h3>
+                        <p class="text-primary font-semibold">Bachelor's Degree</p>
+                        <span class="text-sm text-gray-400 mt-1">2021 - 2024</span>
+                        <div class="absolute -right-[9px] top-2 w-4 h-4 bg-dark border-2 border-gray-500 rounded-full"></div>
+                    </div>
+                    <div class="md:w-2/3 glass-card p-6 rounded-xl ml-8 md:ml-0">
+                        <p class="text-gray-300">Foundation in Computer Science, Algorithms, and Full Stack Development.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Health Management System</h3>
-          <p>Track health, diet, and fitness via dashboard.</p>
-        </div>
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Plant Disease Prediction</h3>
-          <p>ML project using TensorFlow, Flask, Python for plant disease classification.</p>
-        </div>
-      </div>
     </section>
 
-    <section id="internships" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Internships</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">Salesforce Developer Intern</h3>
-          <p>Integrated customer-service workflows (Dec 2023 – Jan 2024).</p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-display font-bold mb-4 text-center" data-aos="fade-up">Featured <span class="text-primary">Projects</span></h2>
+            <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Showcasing scalable solutions and complex database architectures.</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                                <!-- Project 1 -->
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mb-4 text-primary text-3xl">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hotel Database Management System</h3>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Full-stack hotel management platform with booking logic, admin dashboard,
+                        secure authentication, and relational database design.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">MySQL</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">NodeJS</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Express</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">React</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-4 text-primary text-3xl">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">End-to-End School Management Platform</h3>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Complete school ecosystem including admin panel, student portal,
+                        fee management, results dashboard, and secure backend APIs.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Next.js</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">MongoDB</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Express</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">AWS</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-card p-6 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mb-4 text-primary text-3xl">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Plant Disease Detection</h3>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Deep Learning based CNN model to classify plant diseases using
+                        TensorFlow and Flask API deployment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs">
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">TensorFlow</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Flask</span>
+                        <span class="px-3 py-1 bg-primary/10 text-primary rounded-full">Keras</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
-        <div class="p-4 glow-box rounded-xl">
-          <h3 class="font-bold">North Bihar Power Distribution</h3>
-          <p>Worked on DBMS backend projects in a 10-member team (Jan–Mar 2023).</p>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-display font-bold text-center mb-12">
+                Technical <span class="text-primary">Expertise</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Frontend -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Frontend</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        HTML5, CSS3, JavaScript, TypeScript, React, Next.js, 
+                        Redux, Angular.js, jQuery, React Native
+                    </p>
+                </div>
+
+                <!-- Backend -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Backend</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        NodeJS, Express.js, NestJS, Django, Flask, 
+                        MongoDB, MySQL, NPM, Nodemon
+                    </p>
+                </div>
+
+                <!-- AI / ML -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">AI / ML</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Python, Pandas, NumPy, Matplotlib, 
+                        TensorFlow, PyTorch, Keras
+                    </p>
+                </div>
+
+                <!-- Cloud / DevOps -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Cloud & DevOps</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        AWS, Netlify, Git, GitHub, GitLab
+                    </p>
+                </div>
+
+                <!-- Programming -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Programming</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        C, C++, Java, Python, LaTeX
+                    </p>
+                </div>
+
+                <!-- Design Tools -->
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4 text-primary">Design</h3>
+                    <p class="text-gray-400 text-sm leading-7">
+                        Figma, Canva, Adobe Photoshop, Adobe Lightroom, Sketch
+                    </p>
+                </div>
+
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="skills" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-      <ul class="grid grid-cols-2 gap-2 text-sm text-gray-300">
-        <li><strong>Languages:</strong> C, C++, Java, Python, JS, SQL, Kotlin</li>
-        <li><strong>Frameworks:</strong> ReactJS, NodeJS, Flask, ExpressJS, Flutter</li>
-        <li><strong>Tools:</strong> VS Code, Git, Android Studio, MongoDB</li>
-        <li><strong>Platforms:</strong> Linux, MacOS, GitHub</li>
-      </ul>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black/20">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-display font-bold mb-6">
+                Let's Build Something <span class="text-primary">Great</span>
+            </h2>
+            <p class="text-gray-400 mb-8">
+                Open to collaborations, freelance projects, and leadership roles.
+            </p>
+
+            <div class="flex justify-center gap-6 text-2xl">
+                <a href="mailto:yourmail@gmail.com" class="hover:text-primary transition">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-primary transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com" target="_blank" class="hover:text-primary transition">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <section id="certifications" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
-      <ul class="list-disc ml-6 text-sm">
-        <li>ReactJS & Redux – Udemy</li>
-        <li>Python for Data Science – XIE</li>
-        <li>Command Line in Linux – Coursera</li>
-        <li>MongoDB Basics, NodeJS with Express – Udemy</li>
-        <li>Microsoft AI Classroom, 5★ in C++ & SQL</li>
-      </ul>
-    </section>
 
-    <section id="extracurricular" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold mb-4">Extracurricular</h2>
-      <p>Mentor at Code Champ – helped peers excel in DSA and contests (2023–2024).</p>
-    </section>
-  </main>
+    <!-- Footer -->
+    <footer class="py-6 text-center text-gray-500 border-t border-white/10">
+        © 2026 Sangam Kumar Mishra | Senior Tech Lead at Raghudhan
+    </footer>
 
-  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700">
-    &copy; 2025 Sangam Kumar Mishra. All rights reserved.
-  </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
 </body>
 </html>
